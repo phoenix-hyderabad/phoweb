@@ -15,13 +15,22 @@ const AboutUs = () => {
           <StyledTabTrigger value="profs">Professors</StyledTabTrigger>
           <StyledTabTrigger value="team">Team</StyledTabTrigger>
         </TabsList>
-        <TabsContent value="about" className="m-0 flex flex-col">
+        <TabsContent
+          value="about"
+          className="m-0 flex flex-col focus-visible:ring-transparent"
+        >
           <AboutTabContent />
         </TabsContent>
-        <TabsContent value="profs" className="m-0 flex flex-col">
+        <TabsContent
+          value="profs"
+          className="m-0 flex flex-col focus-visible:ring-transparent"
+        >
           <ProfsTabContent />
         </TabsContent>
-        <TabsContent value="team" className="m-0 flex flex-col">
+        <TabsContent
+          value="team"
+          className="m-0 flex flex-col focus-visible:ring-transparent"
+        >
           <TeamTabContent />
         </TabsContent>
       </Tabs>

@@ -29,6 +29,8 @@ const TeamCarouselItem = (props: TeamType) => {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(19rem,max-content))] justify-center gap-4">
             {props.pors.map((e, index) => (
               <CurrentPorCard
+                uid={e.uid}
+                year={props.year}
                 img={`/porImages/${e.student}.jpeg`}
                 designation={e.designation}
                 name={e.student}
@@ -44,12 +46,31 @@ const TeamCarouselItem = (props: TeamType) => {
               key={team}
               team={teamNames[team]}
               description={teamDescriptions[team]}
-              members={props.members[team]}
+              members={props.members[team].map((e) => ({
+                ...e,
+                year: props.year,
+              }))}
             />
           ))}
         </>
       ) : (
-        <TeamMembersItem team="PORS" members={props.pors} />
+        <>
+          <TeamMembersItem
+            team="PORS"
+            members={props.pors.map((e) => ({ ...e, year: props.year }))}
+          />
+          {teams.enumValues.map((team) => (
+            <TeamMembersItem
+              key={team}
+              team={teamNames[team]}
+              description={teamDescriptions[team]}
+              members={props.members[team].map((e) => ({
+                ...e,
+                year: props.year,
+              }))}
+            />
+          ))}
+        </>
       )}
     </CarouselItem>
   );

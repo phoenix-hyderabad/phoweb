@@ -1,6 +1,11 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "~/components/ui/sheet";
 import { type HTMLAttributeAnchorTarget, useCallback, useState } from "react";
 import { Button } from "~/components/ui/button";
 import RouterLink, { type LinkProps } from "next/link";
@@ -53,20 +58,25 @@ const Sidenav = () => {
         </Button>
       </SheetTrigger>
       <SheetContent className="flex flex-col gap-4">
-        <RouterLink
-          href="/"
-          className="flex items-center gap-2 text-xl"
-          onClick={() => setIsOpen(false)}
-        >
-          <Image
-            src="/phoenix-logo.svg"
-            loading="lazy"
-            decoding="async"
-            className="h-10 object-contain"
-            alt="logo"
-          />
-          PHoEnix
-        </RouterLink>
+        <SheetTitle>
+          <RouterLink
+            href="/"
+            className="flex items-center gap-2 text-xl"
+            onClick={() => setIsOpen(false)}
+          >
+            <Image
+              src="/phoenix-logo.svg"
+              loading="lazy"
+              decoding="async"
+              height={40}
+              width={40}
+              className="h-10 object-contain"
+              alt="logo"
+            />
+            PHoEnix
+          </RouterLink>
+        </SheetTitle>
+
         <nav className="flex flex-col gap-2">
           <Link href="resources">Resources</Link>
           <Link href="projects">Projects</Link>

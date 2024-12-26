@@ -11,6 +11,11 @@ import {
   SiGithub,
   type IconType,
 } from "@icons-pack/react-simple-icons";
+import { useSession } from "next-auth/react";
+import { checkAccessSafe } from "~/lib/auth";
+import { Button } from "../ui/button";
+import { TrashIcon } from "lucide-react";
+import { useDeleteMutation } from "~/hooks/team";
 
 const socialIcons: Record<string, IconType> = {
   instagram: SiInstagram,
@@ -29,12 +34,16 @@ const socialUrls: Record<string, string> = {
 };
 
 const CurrentPorCard = ({
+  uid,
+  year,
   name,
   designation,
   img,
   phone,
   socials,
 }: {
+  uid: string;
+  year: number;
   name: string;
   designation: string;
   img: string;
@@ -44,9 +53,13 @@ const CurrentPorCard = ({
     username: string;
   }[];
 }) => {
+  const { data: session } = useSession();
+  const canEdit = checkAccessSafe(session, "edit:team");
+  const deleteMutation = useDeleteMutation();
+
   return (
     <Card className="relative flex max-w-80 flex-col border-b-2 border-l-0 border-r-0 border-t-0">
-      <CardContent className="z-10 flex flex-col items-center gap-4 p-4">
+      <CardContent className="relative z-10 flex flex-col items-center gap-4 p-4">
         <Avatar className="h-36 w-36 border-2">
           <AvatarImage src={img} className="object-cover" />
         </Avatar>
@@ -76,6 +89,16 @@ const CurrentPorCard = ({
             })}
           </div>
         </div>
+        {canEdit ? (
+          <Button
+            size="icon"
+            variant="ghost"
+            className="absolute right-2 top-2"
+            onClick={() => deleteMutation.mutate({ uid, year })}
+          >
+            <TrashIcon className="h-4 w-4 opacity-40" />
+          </Button>
+        ) : null}
       </CardContent>
     </Card>
   );

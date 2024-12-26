@@ -1,6 +1,11 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { cn } from "~/components/utils";
+import { checkAccessSafe } from "~/lib/auth";
+import { Button } from "../ui/button";
+import { TrashIcon } from "lucide-react";
+import { useDeleteMutation } from "~/hooks/team";
 
 const TeamMembersItem = ({
   team,
@@ -9,13 +14,18 @@ const TeamMembersItem = ({
 }: {
   team: string;
   description?: string;
-  members:
-    | { student: string; link?: string; designation?: string }[]
-    | string[];
+  members: {
+    uid: string;
+    year: number;
+    student: string;
+    link?: string;
+    designation?: string;
+  }[];
 }) => {
-  members = members.map((el) =>
-    typeof el === "string" ? { student: el } : el,
-  );
+  const { data: session } = useSession();
+  const canEdit = checkAccessSafe(session, "edit:team");
+  const deleteMutation = useDeleteMutation();
+
   return (
     <div className="flex flex-col items-center gap-4 p-4">
       <span className="flex shrink-0 flex-col gap-2">
@@ -31,7 +41,7 @@ const TeamMembersItem = ({
             <a
               key={index}
               className={cn(
-                "bg-card w-max min-w-44 max-w-80 rounded-xl border p-4",
+                "bg-card relative w-max min-w-44 max-w-80 rounded-xl border p-4",
                 hasLink ? "cursor-pointer" : "",
               )}
               href={hasLink ? el.link : undefined}
@@ -48,6 +58,18 @@ const TeamMembersItem = ({
                   </span>
                 ) : null}
               </div>
+              {canEdit ? (
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="absolute right-2 top-2"
+                  onClick={() =>
+                    deleteMutation.mutate({ uid: el.uid, year: el.year })
+                  }
+                >
+                  <TrashIcon className="h-4 w-4 opacity-40" />
+                </Button>
+              ) : null}
             </a>
           );
         })}

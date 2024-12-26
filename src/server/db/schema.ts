@@ -126,8 +126,11 @@ export const members = createTable(
     name: text("name").notNull(),
     year: integer("year").notNull(),
     ispor: boolean("ispor").notNull().default(false),
-    designation: text("designation").notNull().default("member"),
+    designation: text("designation").notNull().default("Member"),
     team: teams("team"),
+    project: text("project").references(() => projects.key, {
+      onDelete: "set null",
+    }),
     ispoc: boolean("ispoc").notNull().default(false),
     link: text("link"),
     contact: text("contact"),
