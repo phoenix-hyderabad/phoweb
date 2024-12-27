@@ -289,7 +289,7 @@ const TeamTabContent = () => {
         </DialogContent>
       </Dialog>
       {isLoading ? (
-        <LoadingSpinner className="h-6 w-6" />
+        <LoadingSpinner className="h-6 w-6 self-center" />
       ) : isError ? (
         <div className="text-red-500">Error while fetching team members</div>
       ) : !team?.length || !currentTeam ? (
