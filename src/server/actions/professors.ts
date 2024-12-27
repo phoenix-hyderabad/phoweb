@@ -5,31 +5,34 @@ import { auth } from "~/server/auth";
 import { checkAccess } from "~/lib/auth";
 import { professors } from "~/server/db/schema";
 import { eq } from "drizzle-orm";
+import { addProfessorSchema, deleteProfessorSchema } from "~/lib/schemas";
 
 export const getProfessors = async () => {
   return await db.query.professors.findMany({
     orderBy(fields, { desc }) {
-      return desc(fields.faculty);
+      return desc(fields.name);
     },
   });
 };
 
-export const AddProfessor = async (data: typeof professors.$inferInsert) => {
+export const addProfessor = async (data: typeof professors.$inferInsert) => {
   const session = await auth();
   checkAccess(session, "professors:edit");
+  const parsed = addProfessorSchema.parse(data);
   await db
     .insert(professors)
-    .values(data)
+    .values(parsed)
     .onConflictDoUpdate({
       set: {
-        ...data,
+        ...parsed,
       },
       target: professors.id,
     });
 };
 
-export const DeleteProfessor = async (id: number) => {
+export const deleteProfessor = async (data: { id: number }) => {
   const session = await auth();
   checkAccess(session, "professors:edit");
-  await db.delete(professors).where(eq(professors.id, id));
+  const parsed = deleteProfessorSchema.parse(data);
+  await db.delete(professors).where(eq(professors.id, parsed.id));
 };

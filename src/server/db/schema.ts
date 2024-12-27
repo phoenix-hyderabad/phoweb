@@ -161,14 +161,13 @@ export const news = createTable("news", {
 
 export const professors = createTable("professors", {
   id: serial("id").primaryKey(),
-  faculty: text("faculty").notNull(),
+  name: text("name").notNull(),
   designation: text("designation").notNull(),
   qualification: text("qualification").notNull(),
   joinedBits: text("joined_bits").notNull(),
-  interests: text("interests").notNull(),
+  interests: text("interests"),
   coursesTaught: text("courses_taught"),
-  experiences: text("experiences"),
-  labWebsite: text("lab_website"),
+  experience: text("experience"),
   researchLab: text("research_lab"),
 });
 

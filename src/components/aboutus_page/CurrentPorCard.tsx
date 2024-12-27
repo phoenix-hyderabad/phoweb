@@ -11,11 +11,10 @@ import {
   SiGithub,
   type IconType,
 } from "@icons-pack/react-simple-icons";
-import { useSession } from "next-auth/react";
-import { checkAccessSafe } from "~/lib/auth";
 import { Button } from "../ui/button";
 import { TrashIcon } from "lucide-react";
 import { useDeleteMutation } from "~/hooks/team";
+import { useAuth } from "~/hooks/auth";
 
 const socialIcons: Record<string, IconType> = {
   instagram: SiInstagram,
@@ -53,8 +52,7 @@ const CurrentPorCard = ({
     username: string;
   }[];
 }) => {
-  const { data: session } = useSession();
-  const canEdit = checkAccessSafe(session, "edit:team");
+  const { canEdit } = useAuth("members:edit");
   const deleteMutation = useDeleteMutation();
 
   return (

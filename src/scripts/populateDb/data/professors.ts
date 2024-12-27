@@ -3,7 +3,7 @@ import { type professors } from "~/server/db/schema";
 const professorData: (typeof professors.$inferInsert)[] = [
   {
     id: 1,
-    faculty: "Prof. Subhendu Kumar Sahoo (HOD)",
+    name: "Prof. Subhendu Kumar Sahoo (HOD)",
     designation: "Professor",
     qualification: "Ph.D. (BITS-Pilani, Pilani Campus)",
     joinedBits: "June 1999",
@@ -13,7 +13,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 2,
-    faculty: "Dr. Subhradeep Pal (FIC)",
+    name: "Dr. Subhradeep Pal (FIC)",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Patna)",
     joinedBits: "September 2020",
@@ -25,7 +25,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 27,
-    faculty: "Prof. S Gurunarayanan",
+    name: "Prof. S Gurunarayanan",
     designation: "Senior Professor",
     qualification: "Ph.D. (BITS-Pilani)",
     joinedBits: "1987",
@@ -36,7 +36,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 3,
-    faculty: "Prof. Sanket Goel",
+    name: "Prof. Sanket Goel",
     designation: "Professor, Dean-SRCD, PIC-CIIE",
     qualification:
       "BS (H - Delhi University), MS (IIT Delhi), PhD (University of Alberta, Canada), Postdoctoral (Stanford University)",
@@ -51,7 +51,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 4,
-    faculty: "Prof. BVVSN Prabhakar Rao",
+    name: "Prof. BVVSN Prabhakar Rao",
     designation: "Professor",
     qualification: "Ph.D. (IIT Delhi)",
     joinedBits: "July 2009",
@@ -62,7 +62,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 5,
-    faculty: "Prof. Alivelu Manga Parimi",
+    name: "Prof. Alivelu Manga Parimi",
     designation: "Professor",
     qualification: "PhD (University Technology Petronas, Malaysia)",
     joinedBits: "May 2012",
@@ -74,7 +74,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 6,
-    faculty: "Prof. Prasant Kumar Pattnaik",
+    name: "Prof. Prasant Kumar Pattnaik",
     designation: "Associate Professor",
     qualification: "Ph.D (Indian Institute of Science, Bangalore)",
     joinedBits: "June 2012",
@@ -86,7 +86,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 7,
-    faculty: "Prof. Runa Kumari",
+    name: "Prof. Runa Kumari",
     designation: "Associate Professor",
     qualification: "Ph.D (NIT-Rourkela)",
     joinedBits: "Mar 2014",
@@ -98,7 +98,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 8,
-    faculty: "Dr. Venkateswaran Rajagopalan",
+    name: "Dr. Venkateswaran Rajagopalan",
     designation: "Associate Professor",
     qualification: "D.Eng (Cleveland State University, Cleveland, OH, USA)",
     joinedBits: "May 2014",
@@ -109,7 +109,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 9,
-    faculty: "Prof. Surya Shankar Dan",
+    name: "Prof. Surya Shankar Dan",
     designation: "Associate Professor",
     qualification: "Ph.D. (IISc Bangalore)",
     joinedBits: "2016",
@@ -121,7 +121,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 10,
-    faculty: "Prof. Sumit Kumar Chatterjee",
+    name: "Prof. Sumit Kumar Chatterjee",
     designation: "Associate Professor",
     qualification: "Ph.D (IIT Kharagpur)",
     joinedBits: "May 2015",
@@ -132,7 +132,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 11,
-    faculty: "Prof. Soumya J",
+    name: "Prof. Soumya J",
     designation: "Associate Professor",
     qualification: "Ph.D (IIT-Kharagpur)",
     joinedBits: "June 2015",
@@ -144,7 +144,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 12,
-    faculty: "Prof. Radhika Sudha",
+    name: "Prof. Radhika Sudha",
     designation: "Associate Professor",
     qualification: "Ph.D (Tokyo Polytechnic University, Tokyo, Japan)",
     joinedBits: "Nov 2017",
@@ -156,7 +156,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 13,
-    faculty: "Dr. Mithun Mondal",
+    name: "Dr. Mithun Mondal",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Roorkee)",
     joinedBits: "July 2017",
@@ -167,7 +167,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 14,
-    faculty: "Dr. Harish V Dixit",
+    name: "Dr. Harish V Dixit",
     designation: "Assistant Professor",
     qualification: "Ph.D (VJTI)",
     joinedBits: "December 26, 2017",
@@ -179,7 +179,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 15,
-    faculty: "Dr. Sourav Nandi",
+    name: "Dr. Sourav Nandi",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Kharagpur)",
     joinedBits: "April 2018",
@@ -190,7 +190,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 16,
-    faculty: "Dr. Syed Ershad Ahmed",
+    name: "Dr. Syed Ershad Ahmed",
     designation: "Assistant Professor",
     qualification: "Ph.D. (BITS-Pilani)",
     joinedBits: "July 2009",
@@ -201,7 +201,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 17,
-    faculty: "Dr. Rajesh Kumar Tripathy",
+    name: "Dr. Rajesh Kumar Tripathy",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Guwahati)",
     joinedBits: "5th July, 2018",
@@ -213,7 +213,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 18,
-    faculty: "Dr. Ponnalagu R N",
+    name: "Dr. Ponnalagu R N",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Madras)",
     joinedBits: "July 2018",
@@ -225,11 +225,11 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 19,
-    faculty: "Dr. Sayan Kanungo",
+    name: "Dr. Sayan Kanungo",
     designation: "Assistant Professor",
     qualification: "Ph.D. (IIEST-Shibpur)",
     joinedBits: "30th July 2018",
-    experiences: "3 Months-CSIR RA, 4 Years-CSIR SRF, 6 Months-Project Faculty",
+    experiences: "3 Months-CSIR RA, 4 Years-CSIR SRF, 6 Months-Project name",
     interests:
       "Simulation, Design and Modelling of post-CMOS Devices for Gas Sensing, Bio Sensing and Memory Applications, First Principal Calculation, Computational investigations on two-dimensional (2D) materials for Gas Sensing, Photo Detection, and Battery Applications",
     coursesTaught:
@@ -237,7 +237,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 20,
-    faculty: "Dr. Chetan Kumar V",
+    name: "Dr. Chetan Kumar V",
     designation: "Assistant Professor",
     qualification: "Ph.D. (BITS-Pilani)",
     joinedBits: "Nov 2011",
@@ -249,7 +249,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 21,
-    faculty: "Dr. Parikshit Sahatiya",
+    name: "Dr. Parikshit Sahatiya",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Hyderabad)",
     joinedBits: "Dec 2018",
@@ -262,7 +262,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 22,
-    faculty: "Dr. Prashant Wali",
+    name: "Dr. Prashant Wali",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIIT Bangalore)",
     joinedBits: "December 2018",
@@ -274,7 +274,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 23,
-    faculty: "Dr. Ankur Bhattacharjee",
+    name: "Dr. Ankur Bhattacharjee",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIEST, Shibpur)",
     joinedBits: "July 2019",
@@ -286,7 +286,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 24,
-    faculty: "Dr. STP Srinivas",
+    name: "Dr. STP Srinivas",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Madras)",
     joinedBits: "2019",
@@ -298,7 +298,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 25,
-    faculty: "Dr. Amit Kumar Panda",
+    name: "Dr. Amit Kumar Panda",
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Patna)",
     joinedBits: "January 2020",
@@ -310,7 +310,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 26,
-    faculty: "Dr. Pratyush Chakraborty",
+    name: "Dr. Pratyush Chakraborty",
     designation: "Assistant Professor",
     qualification: "Ph.D. (University of Florida, USA)",
     joinedBits: "June 2020",
@@ -323,7 +323,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
 
   {
     id: 28,
-    faculty: "Dr. Joyjit Mukherjee",
+    name: "Dr. Joyjit Mukherjee",
     designation: "Assistant Professor",
     qualification: "Ph.D. (IIT Delhi)",
     joinedBits: "December 2021",
@@ -335,7 +335,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 29,
-    faculty: "Dr. Atri Mukhopadhyay",
+    name: "Dr. Atri Mukhopadhyay",
     designation: "Assistant Professor",
     qualification: "Ph. D. (IIT Kharagpur)",
     joinedBits: "Nov 2022",
@@ -346,7 +346,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 30,
-    faculty: "Dr. Niranjan Raj",
+    name: "Dr. Niranjan Raj",
     designation: "Visiting Assistant Professor",
     qualification: "Ph.D. (IIT-Dhanbad)",
     joinedBits: "August 2023",
@@ -357,7 +357,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
   },
   {
     id: 31,
-    faculty: "Dr. Anakhi Hazarika",
+    name: "Dr. Anakhi Hazarika",
     designation: "Visiting Assistant Professor",
     qualification: "Ph.D. (IIIT-Guwahati)",
     joinedBits: "August 2023",

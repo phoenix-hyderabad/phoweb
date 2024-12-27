@@ -1,11 +1,10 @@
 "use client";
 
-import { useSession } from "next-auth/react";
 import { cn } from "~/components/utils";
-import { checkAccessSafe } from "~/lib/auth";
 import { Button } from "../ui/button";
 import { TrashIcon } from "lucide-react";
 import { useDeleteMutation } from "~/hooks/team";
+import { useAuth } from "~/hooks/auth";
 
 const TeamMembersItem = ({
   team,
@@ -22,8 +21,7 @@ const TeamMembersItem = ({
     designation?: string;
   }[];
 }) => {
-  const { data: session } = useSession();
-  const canEdit = checkAccessSafe(session, "edit:team");
+  const { canEdit } = useAuth("members:edit");
   const deleteMutation = useDeleteMutation();
 
   return (

@@ -17,12 +17,11 @@ import {
 } from "~/components/ui/dialog";
 import { useEffect, useMemo, useState } from "react";
 import TeamCarouselItem from "~/components/aboutus_page/TeamCarouselItem";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getTeam, addMember } from "~/server/actions/team";
+import { useQuery } from "@tanstack/react-query";
+import { getTeam } from "~/server/actions/team";
 import { addMemberSchema } from "~/lib/schemas";
 import { LoadingSpinner } from "~/components/ui/spinner";
-import { useSession } from "next-auth/react";
-import { checkAccessSafe } from "~/lib/auth";
+import { useAuth } from "~/hooks/auth";
 import { Button } from "~/components/ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -44,7 +43,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
-import { toast } from "sonner";
+import { useAddMutation } from "~/hooks/team";
 
 const fetchTeam = async () => {
   const data = await getTeam();
@@ -56,24 +55,9 @@ const TeamTabContent = () => {
   const [current, setCurrent] = useState(0);
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const { data: session } = useSession();
-  const canEdit = useMemo(
-    () => checkAccessSafe(session, "members:edit"),
-    [session],
-  );
+  const { canEdit } = useAuth("members:edit");
 
-  const queryClient = useQueryClient();
-  const addMutation = useMutation({
-    mutationFn: addMember,
-    onSuccess: () => {
-      void queryClient.refetchQueries({ queryKey: ["team"] });
-      toast.success("Added member successfully");
-      setDialogOpen(false);
-    },
-    onError: () => {
-      toast.error("Error adding member");
-    },
-  });
+  const addMutation = useAddMutation(() => setDialogOpen(false));
 
   const form = useForm<z.infer<typeof addMemberSchema>>({
     resolver: zodResolver(addMemberSchema),

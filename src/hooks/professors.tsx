@@ -1,18 +1,18 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { addMember, deleteMember } from "~/server/actions/team";
+import { addProfessor, deleteProfessor } from "~/server/actions/professors";
 
 export const useAddMutation = (onSuccess?: () => void) => {
   const queryClient = useQueryClient();
   const addMutation = useMutation({
-    mutationFn: addMember,
+    mutationFn: addProfessor,
     onSuccess: () => {
-      void queryClient.refetchQueries({ queryKey: ["team"] });
-      toast.success("Added member successfully");
+      void queryClient.refetchQueries({ queryKey: ["professors"] });
+      toast.success("Added professor successfully");
       onSuccess?.();
     },
     onError: () => {
-      toast.error("Error adding member");
+      toast.error("Error adding professor");
     },
   });
   return addMutation;
@@ -21,13 +21,13 @@ export const useAddMutation = (onSuccess?: () => void) => {
 export const useDeleteMutation = () => {
   const queryClient = useQueryClient();
   const deleteMutation = useMutation({
-    mutationFn: deleteMember,
+    mutationFn: deleteProfessor,
     onSuccess: () => {
-      void queryClient.refetchQueries({ queryKey: ["team"] });
-      toast.success("Deleted member successfully");
+      void queryClient.refetchQueries({ queryKey: ["professors"] });
+      toast.success("Deleted professor successfully");
     },
     onError: () => {
-      toast.error("Error deleting member");
+      toast.error("Error deleting professor");
     },
   });
   return deleteMutation;
