@@ -1,5 +1,10 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({
+  path: path.resolve(process.cwd(), ".env"),
+});
 
 export const env = createEnv({
   /**

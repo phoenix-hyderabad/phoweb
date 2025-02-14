@@ -17,7 +17,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Patna)",
     joinedBits: "September 2020",
-    experiences: "7 years in Academics",
+    experience: "7 years in Academics",
     interests:
       "Silicon Photonics, Optical Fiber Communications, Photonic Integrated Circuits, Photo Detectors, Memristors",
     coursesTaught:
@@ -29,7 +29,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Senior Professor",
     qualification: "Ph.D. (BITS-Pilani)",
     joinedBits: "1987",
-    experiences: "35 years in Academics",
+    experience: "35 years in Academics",
     interests: "Digital VLSI Design, Processor Architecture",
     coursesTaught:
       "Electronics, VLSI Design, Digital Design, Microprocessors Programming & Interfacing, VLSI Architecture, Analog Electronics, Embedded System Design, Computer Architecture",
@@ -41,11 +41,11 @@ const professorData: (typeof professors.$inferInsert)[] = [
     qualification:
       "BS (H - Delhi University), MS (IIT Delhi), PhD (University of Alberta, Canada), Postdoctoral (Stanford University)",
     joinedBits: "2015",
-    experiences:
+    experience:
       "17 Years (2 years postdoc, 3 years public-funded R&D, 12 years academia)",
     interests:
       "MEMS, Microfluidics, Nanoelectronics, Flexible, Printed and Wearable Electronics, Cyber-Physical Systems, Lab-on-a-chip, Point-of-Care devices, 3D printing, Fuel Cells, Smart sensors",
-    labWebsite: "MEMS, Microfluidics and Nanoelectronics (MMNE) Lab",
+    researchLab: "MEMS, Microfluidics and Nanoelectronics (MMNE) Lab",
     coursesTaught:
       "Analog Electronics, Digital Design, Electrical Science, Electronic Devices, Electronic Instrumentation, IC Fabrication, MEMS, Microfluidics, Transducers & Measurement Systems",
   },
@@ -55,7 +55,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Professor",
     qualification: "Ph.D. (IIT Delhi)",
     joinedBits: "July 2009",
-    experiences: "12 years Academics",
+    experience: "12 years Academics",
     interests: "Biomedical Signal/Image Processing",
     coursesTaught:
       "Electrical Sciences, Signals & Systems, Electronic Devices, Digital Signal Processing, Fibre optics, Optoelectronics & Analog Electronics",
@@ -66,7 +66,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Professor",
     qualification: "PhD (University Technology Petronas, Malaysia)",
     joinedBits: "May 2012",
-    experiences: "21 years in Academics",
+    experience: "21 years in Academics",
     interests:
       "Renewable Energy Sources, Microgrids, FACTS devices, Power system stability, Power Quality, Reactive power compensation, Modal Analysis, Control Systems, Batteries, Implementation of ML Techniques",
     coursesTaught:
@@ -78,7 +78,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Associate Professor",
     qualification: "Ph.D (Indian Institute of Science, Bangalore)",
     joinedBits: "June 2012",
-    experiences: "14 years Academics, 1 year Industry",
+    experience: "14 years Academics, 1 year Industry",
     interests:
       "Photonics, Optical Communications, Photonic Integrated Circuits, Microfluidics and MEMS - DST-SERB (51.42 Lakhs), Microwave Engineering – BRNS (25.5 Lakhs)",
     coursesTaught:
@@ -90,7 +90,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Associate Professor",
     qualification: "Ph.D (NIT-Rourkela)",
     joinedBits: "Mar 2014",
-    experiences: "4 years",
+    experience: "4 years",
     interests:
       "Dielectric Resonator Antenna, Log periodic Antenna, Reconfigurable Antenna, Microstrip antenna, EBG, Metamaterial, Antenna Array",
     coursesTaught:
@@ -125,7 +125,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Associate Professor",
     qualification: "Ph.D (IIT Kharagpur)",
     joinedBits: "May 2015",
-    experiences: "16 years",
+    experience: "16 years",
     interests: "Digital VLSI Design, Video Compression",
     coursesTaught:
       "Digital Signal Processing, Digital Image Processing, Analog & Digital VLSI Design, CAD for IC Design, Advanced VLSI Design",
@@ -136,7 +136,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Associate Professor",
     qualification: "Ph.D (IIT-Kharagpur)",
     joinedBits: "June 2015",
-    experiences: "9 months (Industry), 9 years (Academics)",
+    experience: "9 months (Industry), 9 years (Academics)",
     interests:
       "Network-on-Chip (NoC) design, Reconfigurable System design, Fault-Tolerant System Design, Real Time Systems, Verification",
     coursesTaught:
@@ -148,7 +148,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Associate Professor",
     qualification: "Ph.D (Tokyo Polytechnic University, Tokyo, Japan)",
     joinedBits: "Nov 2017",
-    experiences: "19 years (Teaching and Research)",
+    experience: "19 years (Teaching and Research)",
     interests:
       "Power Electronics, Machine Condition Monitoring, Pattern recognition, Renewable Energy, ANN, IoT, Smart Grids, Energy Storage Systems",
     coursesTaught:
@@ -160,7 +160,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Roorkee)",
     joinedBits: "July 2017",
-    experiences: "2 years Academics",
+    experience: "2 years Academics",
     interests:
       "High Voltage Engineering, Condition Monitoring and Diagnostics of Transformers, High Voltage Engineering",
     coursesTaught: "Power Systems, Electrical Machines, Electrical Sciences",
@@ -171,7 +171,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (VJTI)",
     joinedBits: "December 26, 2017",
-    experiences: "9 years",
+    experience: "9 years",
     interests:
       "Microwave and RF Engineering (High and Low Power), Multiphysics Analysis, Pulsed Power Technology",
     coursesTaught:
@@ -194,7 +194,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D. (BITS-Pilani)",
     joinedBits: "July 2009",
-    experiences: "10 years of Academic and 1 year Industry Experience",
+    experience: "10 years of Academic and 1 year Industry Experience",
     interests: "VLSI Arithmetic Circuits, Low Power VLSI Design",
     coursesTaught:
       "Microelectronic Circuits, Digital Design, Electrical Science, Analog & Digital   VLSI Design, Embedded System Design, VLSI Architecture",
@@ -205,7 +205,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Guwahati)",
     joinedBits: "5th July, 2018",
-    experiences: "1.3 Years academia",
+    experience: "1.3 Years academia",
     interests:
       "Digital Signal Processing, Time-Frequency analysis, Pattern recognition and Machine Learning, Deep Learning for Healthcare",
     coursesTaught:
@@ -217,7 +217,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Madras)",
     joinedBits: "July 2018",
-    experiences: "14 years Academics",
+    experience: "14 years Academics",
     interests:
       "Sensors - Signal conditioning and Interfacing, Biomedical Instrumentation systems and Unmanned Aerial Vehicles & IoT Systems",
     coursesTaught:
@@ -229,7 +229,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D. (IIEST-Shibpur)",
     joinedBits: "30th July 2018",
-    experiences: "3 Months-CSIR RA, 4 Years-CSIR SRF, 6 Months-Project name",
+    experience: "3 Months-CSIR RA, 4 Years-CSIR SRF, 6 Months-Project name",
     interests:
       "Simulation, Design and Modelling of post-CMOS Devices for Gas Sensing, Bio Sensing and Memory Applications, First Principal Calculation, Computational investigations on two-dimensional (2D) materials for Gas Sensing, Photo Detection, and Battery Applications",
     coursesTaught:
@@ -241,7 +241,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D. (BITS-Pilani)",
     joinedBits: "Nov 2011",
-    experiences: "2 Years of Industry Experience",
+    experience: "2 Years of Industry Experience",
     interests:
       "Computer Arithmetic, CNFET based Multi-valued logic design, Design of reversible Arithmetic circuits",
     coursesTaught:
@@ -253,7 +253,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Hyderabad)",
     joinedBits: "Dec 2018",
-    experiences:
+    experience:
       "Research Scientist (Redpine Signals), Visiting Professor, Purdue University, USA, Visiting Professor, Tufts University, USA",
     interests:
       "Flexible and Wearable Electronics, 2D Materials-based Electronics, Broadband Photodetectors, Resistive memories, Transient Electronics, VOC sensing, Papertronics, etc.",
@@ -266,7 +266,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIIT Bangalore)",
     joinedBits: "December 2018",
-    experiences: "Around 18 Years of Teaching Experience",
+    experience: "Around 18 Years of Teaching Experience",
     interests:
       "Radio Resource Allocation, MAC Optimization, Packet Scheduling in 4G and Beyond Broadband Wireless Networks",
     coursesTaught:
@@ -278,7 +278,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIEST, Shibpur)",
     joinedBits: "July 2019",
-    experiences: "7 Years in Academics",
+    experience: "7 Years in Academics",
     interests:
       "Renewable Energy, Energy Storage, Hybrid Microgrids, Electric Vehicles, Battery Management Systems (BMS), Machine Learning Applications",
     coursesTaught:
@@ -290,7 +290,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT Madras)",
     joinedBits: "2019",
-    experiences: "11 months (industry) + 18 months (Academics)",
+    experience: "11 months (industry) + 18 months (Academics)",
     interests:
       "Power System Analysis, Control, Optimization & Protection, Smart Protection Systems, Microgrids",
     coursesTaught:
@@ -302,7 +302,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D (IIT-Patna)",
     joinedBits: "January 2020",
-    experiences: "4 years in Academics",
+    experience: "4 years in Academics",
     interests:
       "VLSI Architectural Design, VLSI for Cryptography, Hardware Security, FPGA based System Design",
     coursesTaught:
@@ -314,7 +314,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D. (University of Florida, USA)",
     joinedBits: "June 2020",
-    experiences: "3 years (Industry) + 3 years (Postdoctoral Research)",
+    experience: "3 years (Industry) + 3 years (Postdoctoral Research)",
     interests:
       "Game Theory, Power System, Renewable Integration, Control Theory, Cyber-Physical Systems",
     coursesTaught:
@@ -327,7 +327,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph.D. (IIT Delhi)",
     joinedBits: "December 2021",
-    experiences:
+    experience:
       "Academic - Postdoctoral Researcher at University of South Denmark Odense, Denmark (October 2020 - October 2021), Research Associate at JATC(DRDO), IIT Delhi (January 2020 - September 2020)",
     interests:
       "Control Theory, Robotics, Aerospace Control, Human-Robot Interaction, Digital Twins",
@@ -339,7 +339,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Assistant Professor",
     qualification: "Ph. D. (IIT Kharagpur)",
     joinedBits: "Nov 2022",
-    experiences: "2.5 months (Industry) + 61 months (Academics)",
+    experience: "2.5 months (Industry) + 61 months (Academics)",
     interests:
       "MAC protocol design and resource allocation in wireless-optical access networks, optical access networks, wireless networks and free space optical networks. Network Optimization and Game Theory",
     coursesTaught: "Information Theory & Coding (ECE F344)",
@@ -350,7 +350,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Visiting Assistant Professor",
     qualification: "Ph.D. (IIT-Dhanbad)",
     joinedBits: "August 2023",
-    experiences: "1.5 years Post-doc at DESE Dept. IISc",
+    experience: "1.5 years Post-doc at DESE Dept. IISc",
     interests:
       "Analog VLSI Design, Memristive Circuit, Neuromorphic Computing, Low power circuit design, Open source EDA tool",
     coursesTaught: "Analog Integrated Circuit",
@@ -361,7 +361,7 @@ const professorData: (typeof professors.$inferInsert)[] = [
     designation: "Visiting Assistant Professor",
     qualification: "Ph.D. (IIIT-Guwahati)",
     joinedBits: "August 2023",
-    experiences: "6 Months Post-doc at EE Dept. IIT Hyderabad",
+    experience: "6 Months Post-doc at EE Dept. IIT Hyderabad",
     interests:
       "AI-based Embedded System Design, Computer Vision application on Edge",
   },
