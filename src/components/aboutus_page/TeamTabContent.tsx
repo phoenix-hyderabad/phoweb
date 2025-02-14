@@ -17,6 +17,7 @@ import {
 } from "~/components/ui/dialog";
 import { useEffect, useMemo, useState } from "react";
 import TeamCarouselItem from "~/components/aboutus_page/TeamCarouselItem";
+import { ScrollArea } from "~/components/ui/scroll-area";
 import { useQuery } from "@tanstack/react-query";
 import { getTeam } from "~/server/actions/team";
 import { addMemberSchema } from "~/lib/schemas";
@@ -115,177 +116,179 @@ const TeamTabContent = () => {
             <Button className="mb-4 self-center">Add member</Button>
           </DialogTrigger>
         ) : null}
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
+        <DialogContent className="flex max-h-[90vh] flex-col">
+          <DialogHeader className="p-2">
             <DialogTitle>Add member</DialogTitle>
             <DialogDescription>Enter details</DialogDescription>
           </DialogHeader>
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="flex flex-col gap-4"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="uid"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>UID*</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="fyyyyxxxx"
-                          maxLength={13}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="year"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Year*</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder=""
-                          min={2020}
-                          max={new Date().getFullYear()}
-                          type="number"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name*</FormLabel>
-                    <FormControl>
-                      <Input placeholder="" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="team"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Team</FormLabel>
-                    <div className="flex gap-2">
-                      <Select
-                        onValueChange={field.onChange}
-                        value={field.value ?? ""}
-                      >
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select..." />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="it">IT</SelectItem>
-                          <SelectItem value="tech">Tech</SelectItem>
-                          <SelectItem value="editorial">Editorial</SelectItem>
-                          <SelectItem value="design">Design</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <Button
-                        type="button"
-                        size="sm"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          form.setValue("team", null);
-                        }}
-                      >
-                        Clear
-                      </Button>
-                    </div>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="link"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Link</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="https://github.com/username"
-                        {...field}
-                        value={field.value ?? ""}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="ispor"
-                render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-2 space-y-0 py-2">
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <div className="space-y-1 leading-none">
-                      <FormLabel>is POR?</FormLabel>
-                    </div>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              {form.getValues("ispor") ? (
-                <>
+          <ScrollArea className="flex max-h-full flex-col" type="always">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="flex flex-col gap-4 p-2 pt-0"
+              >
+                <div className="grid grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
-                    name="designation"
+                    name="uid"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Designation</FormLabel>
-                        <FormControl>
-                          <Input {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="contact"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone</FormLabel>
+                        <FormLabel>UID*</FormLabel>
                         <FormControl>
                           <Input
+                            placeholder="fyyyyxxxx"
+                            maxLength={13}
                             {...field}
-                            value={field.value ?? ""}
-                            type="tel"
                           />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                </>
-              ) : null}
-              <Button type="submit">Submit</Button>
-            </form>
-          </Form>
+                  <FormField
+                    control={form.control}
+                    name="year"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Year*</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder=""
+                            min={2020}
+                            max={new Date().getFullYear()}
+                            type="number"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name*</FormLabel>
+                      <FormControl>
+                        <Input placeholder="" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="team"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Team</FormLabel>
+                      <div className="flex gap-2">
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value ?? ""}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select..." />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="it">IT</SelectItem>
+                            <SelectItem value="tech">Tech</SelectItem>
+                            <SelectItem value="editorial">Editorial</SelectItem>
+                            <SelectItem value="design">Design</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <Button
+                          type="button"
+                          size="sm"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            form.setValue("team", null);
+                          }}
+                        >
+                          Clear
+                        </Button>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="link"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Link</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="https://github.com/username"
+                          {...field}
+                          value={field.value ?? ""}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="ispor"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-2 space-y-0 py-2">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel>is POR?</FormLabel>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {form.getValues("ispor") ? (
+                  <>
+                    <FormField
+                      control={form.control}
+                      name="designation"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Designation</FormLabel>
+                          <FormControl>
+                            <Input {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="contact"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone</FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              value={field.value ?? ""}
+                              type="tel"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </>
+                ) : null}
+                <Button type="submit">Submit</Button>
+              </form>
+            </Form>
+          </ScrollArea>
         </DialogContent>
       </Dialog>
       {isLoading ? (

@@ -87,7 +87,7 @@ const ProfsTabContent = () => {
           </DialogTrigger>
         ) : null}
         <DialogContent className="flex max-h-[90vh] flex-col">
-          <DialogHeader>
+          <DialogHeader className="p-2">
             <DialogTitle>Add professor</DialogTitle>
             <DialogDescription>Enter details</DialogDescription>
           </DialogHeader>
@@ -95,7 +95,7 @@ const ProfsTabContent = () => {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="flex flex-col gap-4 pl-[1px] pr-2"
+                className="flex flex-col gap-4 p-2 pt-0"
               >
                 <FormField
                   control={form.control}
