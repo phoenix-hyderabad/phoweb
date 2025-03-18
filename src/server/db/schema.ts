@@ -178,3 +178,13 @@ export const projects = createTable("projects", {
   problemStatement: text("problem_statement").notNull(),
   current: boolean("current").default(true),
 });
+
+export const projectApplications = createTable("project_applications", {
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id)
+    .primaryKey(),
+  cgpa: integer("cgpa").notNull(),
+  skills: text("skills").notNull(),
+  additionalInfo: text("additional_info"),
+});
