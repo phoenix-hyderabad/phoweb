@@ -9,6 +9,7 @@ import {
   varchar,
   boolean,
   serial,
+  numeric,
 } from "drizzle-orm/pg-core";
 import { type AdapterAccount } from "next-auth/adapters";
 import { pgEnum } from "drizzle-orm/pg-core";
@@ -177,4 +178,14 @@ export const projects = createTable("projects", {
   cover: text("cover").notNull(),
   problemStatement: text("problem_statement").notNull(),
   current: boolean("current").default(true),
+});
+
+export const projectApplications = createTable("project_applications", {
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id)
+    .primaryKey(),
+  cgpa: numeric("cgpa").notNull(),
+  skills: text("skills").notNull(),
+  additionalInfo: text("additional_info"),
 });
