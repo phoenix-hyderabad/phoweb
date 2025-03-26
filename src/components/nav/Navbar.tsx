@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="bg-background/75 sticky inset-x-0 top-0 z-50 flex h-16 w-full items-center justify-between border-b px-4 backdrop-blur-lg transition-all">
+    <div className="sticky inset-x-0 top-0 z-50 flex h-16 w-full items-center justify-between border-b bg-background/75 px-4 backdrop-blur-lg transition-all">
       <RouterLink href="/" className="flex items-center gap-2 text-xl">
         <Image
           src="/phoenix-logo.svg"
@@ -50,6 +50,12 @@ const Navbar = () => {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="aboutus">About us</Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="apply">Apply</Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="viewApplications">View Applications</Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
