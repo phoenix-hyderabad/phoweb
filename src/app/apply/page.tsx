@@ -6,6 +6,8 @@ import { Input } from "~/components/ui/input";
 import { Textarea } from "~/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Label } from "~/components/ui/label";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 const ApplyPage = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +15,19 @@ const ApplyPage = () => {
     cgpa: "",
     skills: "",
     otherInfo: "",
-    pdf: null as File | null,
+  });
+
+  const applyMutation = useMutation({
+    mutationFn: async (data: FormData) => {
+      // TODO: make request to backend
+      console.log(data);
+    },
+    onSuccess: () => {
+      toast.success("Application submitted successfully!");
+    },
+    onError: () => {
+      toast.error("Failed to submit application");
+    },
   });
 
   const handleChange = (
@@ -21,11 +35,6 @@ const ApplyPage = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData((prev) => ({ ...prev, pdf: file }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,24 +46,7 @@ const ApplyPage = () => {
     submissionData.append("skills", formData.skills);
     submissionData.append("otherInfo", formData.otherInfo);
 
-    if (formData.pdf) {
-      submissionData.append("pdf", formData.pdf);
-    }
-
-    try {
-      const res = await fetch("/api/apply", {
-        method: "POST",
-        body: submissionData,
-      });
-
-      if (res.ok) {
-        alert("Application submitted successfully!");
-      } else {
-        alert("Failed to submit application");
-      }
-    } catch (error) {
-      console.error("Error submitting application:", error);
-    }
+    applyMutation.mutate(submissionData);
   };
 
   return (
@@ -126,25 +118,6 @@ const ApplyPage = () => {
                 className="h-28 w-full resize-none rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
                 placeholder="Mention any additional information..."
               />
-            </div>
-
-            {/* PDF Upload */}
-            <div className="space-y-2">
-              <Label htmlFor="pdf" className="text-lg font-medium">
-                Upload Project PDF (Optional)
-              </Label>
-              <Input
-                type="file"
-                id="pdf"
-                accept="application/pdf"
-                onChange={handleFileChange}
-                className="rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
-              />
-              {formData.pdf && (
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  Selected: {formData.pdf.name}
-                </p>
-              )}
             </div>
 
             {/* Submit Button */}

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Button } from "~/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
 
 type Application = {
   id: string;
@@ -13,32 +13,27 @@ type Application = {
   pdfUrl?: string;
 };
 
+// TODO: fetch from backend
+const fetchApplications = async () => {
+  const applications: Application[] = [
+    {
+      id: "1",
+      project: "Project 1",
+      cgpa: "9.5",
+      skills: "React, TypeScript, Node.js",
+      otherInfo: "I have experience with React and TypeScript.",
+    },
+  ];
+  return applications;
+};
+
 const ViewApplications = () => {
-  const [applications, setApplications] = useState<Application[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchApplications = async () => {
-      try {
-        const res = await fetch("/api/applications");
-
-        if (!res.ok) {
-          console.error("Failed to fetch applications");
-          setLoading(false);
-          return;
-        }
-
-        const data = await res.json();
-        setApplications(data);
-      } catch (error) {
-        console.error("Error fetching applications:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchApplications();
-  }, []);
+  const { data: applications, isLoading } = useQuery<Application[]>({
+    queryKey: ["project_applications"],
+    queryFn: fetchApplications,
+    staleTime: Infinity,
+    retry: 1,
+  });
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-6 py-12 dark:bg-gray-900">
@@ -47,11 +42,11 @@ const ViewApplications = () => {
           Submitted Applications
         </h1>
 
-        {loading ? (
+        {isLoading ? (
           <p className="text-center text-lg text-gray-700 dark:text-gray-300">
             Loading applications...
           </p>
-        ) : applications.length === 0 ? (
+        ) : !applications?.length ? (
           <p className="text-center text-lg text-gray-500 dark:text-gray-400">
             No applications found.
           </p>
