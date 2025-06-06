@@ -309,10 +309,8 @@ const TeamTabContent = () => {
             <CarouselNext className="static translate-y-0" />
           </div>
           <CarouselContent className="-ml-4">
-            {[...team]
-              .sort((a, b) => b.year - a.year) // Sort by year descending
-              .map((el, index) => (
-                <TeamCarouselItem {...el} key={index} />
+            {team.map((el, index) => (
+              <TeamCarouselItem {...el} key={index} />
             ))}
           </CarouselContent>
         </Carousel>
