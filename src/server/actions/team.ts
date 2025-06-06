@@ -10,8 +10,9 @@ import { addMemberSchema, deleteMemberSchema } from "~/lib/schemas";
 const CURRENT_YEAR = 2025;
 
 export const getTeam = async () => {
-  const members = await db.query.members.findMany();
-
+  const members = await db.query.members.findMany({
+    orderBy: (members, { desc }) => [desc(members.year)],
+  });
   const accum: Record<
     string,
     {
