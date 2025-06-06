@@ -7,7 +7,7 @@ import { checkAccess } from "~/lib/auth";
 import { and, eq } from "drizzle-orm";
 import { addMemberSchema, deleteMemberSchema } from "~/lib/schemas";
 
-const CURRENT_YEAR = 2024;
+const CURRENT_YEAR = 2025;
 
 export const getTeam = async () => {
   const members = await db.query.members.findMany();
