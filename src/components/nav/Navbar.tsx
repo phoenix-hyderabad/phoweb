@@ -51,12 +51,12 @@ const Navbar = () => {
           <NavigationMenuItem>
             <Link href="aboutus">About us</Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <Link href="apply">Apply</Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="viewApplications">View Applications</Link>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
       <Sidenav />
