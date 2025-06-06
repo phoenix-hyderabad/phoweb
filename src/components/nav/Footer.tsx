@@ -30,17 +30,17 @@ const Footer = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="https://www.instagram.com/phoenixbphc?igsh=MWk3MWZuYXB6Nzh4dw==">
+            <Link href="https://www.instagram.com/phoenixbphc?igsh=MWk3MWZuYXB6Nzh4dw==">
               <InstagramLogoIcon className="h-5 w-5" />
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="https://www.linkedin.com/company/phoenix-association-bphc/">
+            <Link href="https://www.linkedin.com/company/phoenix-association-bphc/">
               <LinkedInLogoIcon className="h-5 w-5" />
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="https://www.facebook.com/groups/121969974532289/user/100063699953850/">
+            <Link href="https://www.facebook.com/groups/121969974532289/user/100063699953850/">
               <SiFacebook className="h-5 w-5" />
             </Link>
           </NavigationMenuItem>
