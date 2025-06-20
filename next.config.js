@@ -22,6 +22,15 @@ const config = {
       {
         hostname: "upload.wikimedia.org",
       },
+      {
+        hostname: "researchgate.net",
+      },
+      {
+        hostname: "i.ytimg.com",
+      },
+      {
+        hostname: "circuitstate.com",
+      },
     ],
   },
 };
