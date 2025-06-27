@@ -17,19 +17,8 @@ const config = {
   images: {
     remotePatterns: [
       {
-        hostname: "phoenix-bphc.vercel.app",
-      },
-      {
-        hostname: "upload.wikimedia.org",
-      },
-      {
-        hostname: "researchgate.net",
-      },
-      {
-        hostname: "i.ytimg.com",
-      },
-      {
-        hostname: "circuitstate.com",
+        protocol: "https",
+        hostname: "**",
       },
     ],
   },
