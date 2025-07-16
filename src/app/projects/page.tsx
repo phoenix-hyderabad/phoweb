@@ -14,9 +14,22 @@ import { ScrollArea, ScrollBar } from "~/components/ui/scroll-area";
 import { useQuery } from "@tanstack/react-query";
 import { getProjects, type Project } from "~/server/actions/projects";
 import Image from "next/image";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "~/components/ui/select";
+import { getProfessors } from "~/server/actions/professors";
 
 const fetchProjects = async () => {
   const data = await getProjects();
+  return data;
+};
+
+const fetchProfessors = async () => {
+  const data = await getProfessors();
   return data;
 };
 
@@ -24,12 +37,22 @@ function Projects() {
   const [selectedProjectName, setSelectedProjectName] = useState<string>("");
   const [currentProjects, setCurrentProjects] = useState<Project[]>([]);
   const [pastProjects, setPastProjects] = useState<Project[]>([]);
+  const [showProfessorDropdown, setShowProfessorDropdown] = useState(false);
+  const [selectedProfessor, setSelectedProfessor] = useState("");
 
   const { data: projects, isLoading } = useQuery<Project[]>({
     queryKey: ["projects"],
     queryFn: fetchProjects,
     staleTime: Infinity,
     retry: 1,
+  });
+
+  const { data: professors = [] } = useQuery({
+    queryKey: ["professors"],
+    queryFn: fetchProfessors,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    retry: false,
   });
 
   useEffect(() => {
@@ -66,6 +89,28 @@ function Projects() {
           integrating the latest hardware and software advancements, we strive
           to deliver impactful, high-quality solutions.
         </p>
+        <h4
+          className={`text-xl font-semibold mt-4 cursor-pointer transition-colors select-none ${showProfessorDropdown ? 'text-red-700' : 'hover:text-red-500'}`}
+          onClick={() => setShowProfessorDropdown((prev) => !prev)}
+        >
+          Apply for Projects under Professors
+        </h4>
+        {showProfessorDropdown && (
+          <div className="mt-2 flex flex-col items-start">
+            <Select value={selectedProfessor} onValueChange={setSelectedProfessor}>
+              <SelectTrigger className="w-64">
+                <SelectValue placeholder={<span className='italic'>Select Professor</span>} />
+              </SelectTrigger>
+              <SelectContent>
+                {professors.map((prof) => (
+                  <SelectItem key={prof.id} value={prof.name}>
+                    {prof.name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
       </div>
       <Dialog>
         <DialogContent className="flex max-h-screen max-w-5xl flex-col">
