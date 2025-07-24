@@ -53,7 +53,7 @@ const ApplyPage = () => {
     <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 dark:bg-gray-900">
       <Card className="w-full max-w-2xl rounded-2xl bg-white p-6 shadow-xl dark:bg-gray-800">
         <CardHeader>
-          <CardTitle className="text-center text-3xl font-semibold text-gray-900 dark:text-white">
+          <CardTitle className="text-center text-3xl font-semibold text-gray-900 dark:text-gray-200">
             Apply for a Project
           </CardTitle>
         </CardHeader>
@@ -61,7 +61,7 @@ const ApplyPage = () => {
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Project Name */}
             <div className="space-y-2">
-              <Label htmlFor="project" className="text-lg font-medium">
+              <Label htmlFor="project" className="text-lg font-medium text-gray-600 dark:text-gray-200">
                 Project Name
               </Label>
               <Input
@@ -70,13 +70,13 @@ const ApplyPage = () => {
                 value={formData.project}
                 onChange={handleChange}
                 required
-                className="rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                className="rounded-lg border-gray-300 text-gray-600 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900"
               />
             </div>
 
             {/* CGPA */}
             <div className="space-y-2">
-              <Label htmlFor="cgpa" className="text-lg font-medium">
+              <Label htmlFor="cgpa" className="text-lg font-medium text-gray-600 dark:text-gray-200">
                 CGPA
               </Label>
               <Input
@@ -86,13 +86,13 @@ const ApplyPage = () => {
                 value={formData.cgpa}
                 onChange={handleChange}
                 required
-                className="rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                className="rounded-lg border-gray-300 text-gray-600 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900"
               />
             </div>
 
             {/* Skills */}
             <div className="space-y-2">
-              <Label htmlFor="skills" className="text-lg font-medium">
+              <Label htmlFor="skills" className="text-lg font-medium text-gray-600 dark:text-gray-200">
                 Skills (comma separated)
               </Label>
               <Input
@@ -101,13 +101,13 @@ const ApplyPage = () => {
                 value={formData.skills}
                 onChange={handleChange}
                 required
-                className="rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                className="rounded-lg border-gray-300 text-gray-600 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900"
               />
             </div>
 
             {/* Other Info */}
             <div className="space-y-2">
-              <Label htmlFor="otherInfo" className="text-lg font-medium">
+              <Label htmlFor="otherInfo" className="text-lg font-medium text-gray-600 dark:text-gray-200">
                 Other Info
               </Label>
               <Textarea
@@ -115,7 +115,7 @@ const ApplyPage = () => {
                 name="otherInfo"
                 value={formData.otherInfo}
                 onChange={handleChange}
-                className="h-28 w-full resize-none rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
+                className="h-28 w-full resize-none rounded-lg border-gray-300 text-gray-600 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900"
                 placeholder="Mention any additional information..."
               />
             </div>
